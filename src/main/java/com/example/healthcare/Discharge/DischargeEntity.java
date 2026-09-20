@@ -28,9 +28,10 @@ public class DischargeEntity {
     @JoinColumn (name = "pid")
     private PatientEntity patientid;
 
+    private double total;
+
     @ManyToOne
-    @JoinColumn (name = "appid")
-    private AppointmentEntity appointmentid;
+    @JoinColumn (name = "appid") AppointmentEntity appointmentid;
 
     @ManyToOne
     @JoinColumn (name = "imageid")
@@ -44,10 +45,10 @@ public class DischargeEntity {
     @JoinColumn (name = "medicineid")
     private PharmEntity medicineid;
 
-    @PrePersist 
-    @PreUpdate 
+
     public double getTotalBill() {
-    double total = 0.0;
+        
+        double total = 0.0;
 
         if (appointmentid != null && appointmentid.getDoctorid() != null) {
         total += appointmentid.getDoctorid().getDfees();
@@ -64,8 +65,6 @@ public class DischargeEntity {
         return total;
         
     }
-    
-    private double total;
 
     
 }
