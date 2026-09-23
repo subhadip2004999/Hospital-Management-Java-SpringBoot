@@ -1,8 +1,6 @@
 package com.example.healthcare.Appointment;
 import java.sql.Date;
 
-import org.hibernate.annotations.ManyToAny;
-
 import com.example.healthcare.People.DoctorEntity;
 import com.example.healthcare.People.PatientEntity;
 
