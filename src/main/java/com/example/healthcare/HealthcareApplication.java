@@ -14,7 +14,7 @@ public class HealthcareApplication {
 		Scanner sc = new Scanner(System.in);
 
 		int num = 0;
-		do{
+		do {
 
 			System.out.println("\n\n||-------------------------------||");
 			System.out.println("|| SELECT SERVICE FOR THE SYSTEM ||");
@@ -31,7 +31,7 @@ public class HealthcareApplication {
 			int choice = sc.nextInt();
 			sc.nextLine();
 
-		}while(num!=890);
+		} while (num != 890);
 
 	}
 

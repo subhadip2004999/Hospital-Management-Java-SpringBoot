@@ -3,8 +3,6 @@ package com.example.healthcare.Pharmacy;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.healthcare.Laboratory.LabEntity;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -14,14 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-@RestController 
-@RequestMapping ("/pharmacy")
+@RestController
+@RequestMapping("/pharmacy")
 public class PharmController {
-    
-    @Autowired 
+
+    @Autowired
     PharmService service;
-    
+
     @GetMapping("/getallmedicine")
     public List<PharmEntity> getAllMedicine() {
         return service.showAllMedicine();
@@ -36,5 +33,5 @@ public class PharmController {
     public void postAddMedicine(@RequestBody PharmEntity entity) {
         service.createMedicine(entity);
     }
-    
+
 }
