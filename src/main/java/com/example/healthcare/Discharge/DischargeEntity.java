@@ -3,6 +3,7 @@ package com.example.healthcare.Discharge;
 import com.example.healthcare.Appointment.AppointmentEntity;
 import com.example.healthcare.Imaging.ImageEntity;
 import com.example.healthcare.Laboratory.LabEntity;
+import com.example.healthcare.People.DoctorEntity;
 import com.example.healthcare.People.PatientEntity;
 import com.example.healthcare.Pharmacy.PharmEntity;
 
@@ -21,6 +22,10 @@ public class DischargeEntity {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long dischargeid;
+
+    @ManyToOne
+    @JoinColumn (name = "did")
+    private DoctorEntity doctorid;
 
     @ManyToOne
     @JoinColumn (name = "pid")
@@ -49,7 +54,7 @@ public class DischargeEntity {
         double total = 0.0;
 
         if (appointmentid != null && appointmentid.getDoctorid() != null) {
-        total += appointmentid.getDoctorid().getDfees();
+        total += doctorid.getDfees();
         }
         if (imageid != null) {
         total += imageid.getImagecost();
