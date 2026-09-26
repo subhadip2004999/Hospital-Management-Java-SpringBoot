@@ -12,8 +12,14 @@ public class HealthcareApplication implements CommandLineRunner {
 
     @Autowired
     private Appointments app;
+    @Autowired
     private Patients pat;
+    @Autowired
     private Doctors doc;
+    @Autowired
+    private ImageAdmin img;
+    @Autowired
+    private LabAdmin lab;
 
     public static void main(String[] args) {
         SpringApplication.run(HealthcareApplication.class, args);
@@ -155,13 +161,97 @@ public class HealthcareApplication implements CommandLineRunner {
                         }
                     }while(doctorLoop==0);
 
+                case 4:
+                    int imageLoop = 0;
+                    do{
+                        System.out.println("\n\n||---------||");
+                        System.out.println("|| Imaging ||");
+                        System.out.println("||---------||\n");
+                        System.out.println("1. Add New Image Technology");
+                        System.out.println("2. Show All Image Technology");
+                        System.out.println("3. Find Imaging Details By Id");
+                        System.out.println("4. Exit");
+                        System.out.print("\nEnter your choice: ");
+                        int choice4 = sc.nextInt();
+                        sc.nextLine();
+                        switch(choice4){
+                            case 1:
+                                img.addimage();
+                                sc.nextLine();
+                                break;
+                            case 2:
+                                img.allimage();
+                                sc.nextLine();
+                                break;
+                            case 3:
+                                img.imagebyid();
+                                sc.nextLine();
+                                break;
+                            case 4:
+                                System.out.println("\nExit Imaging\n");
+                                sc.nextLine();
+                                imageLoop = 1;
+                                break;
+                            default:
+                                System.out.println("\nWrong Choice\n");
+                                sc.nextLine();
+                                break;
+                        }
+
+                    }while(imageLoop==0);
+
+                case 5:
+                int labLoop = 0;
+                    do{
+                        System.out.println("\n\n||------------||");
+                        System.out.println("|| Laboratory ||");
+                        System.out.println("||------------||\n");
+                        System.out.println("1. Add New Image Technology");
+                        System.out.println("2. Show All Image Technology");
+                        System.out.println("3. Find Imaging Details By Id");
+                        System.out.println("4. Exit");
+                        System.out.print("\nEnter your choice: ");
+                        int choice5 = sc.nextInt();
+                        sc.nextLine();
+                        switch(choice5){
+                            case 1:
+                                lab.addlab();
+                                sc.nextLine();
+                                break;
+                            case 2:
+                                lab.alllab();
+                                sc.nextLine();
+                                break;
+                            case 3:
+                                lab.labbyid();
+                                sc.nextLine();
+                                break;
+                            case 4:
+                                System.out.println("\nExit Imaging\n");
+                                sc.nextLine();
+                                imageLoop = 1;
+                                break;
+                            default:
+                                System.out.println("\nWrong Choice\n");
+                                sc.nextLine();
+                                break;
+                            }
+                    }while(labLoop==0);
+
+
+                case 6:
+                    int pharmLoop = 0;
+                    do{
+                        
+                    }while(pharmLoop==0);
+
+
                 case 8:
-                    Loop = 890;
+                    Loop = 1;
                     break;
             }
 
         } while (Loop == 0);
-
-        sc.close();
+ 
     }
 }

@@ -16,7 +16,7 @@ public class DoctorEntity {
     
     private String dname;
     private String dspecialization;
-    private int dphone;
+    private String dphone;
     private double dfees;
     
 }

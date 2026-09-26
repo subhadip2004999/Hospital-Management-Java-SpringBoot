@@ -15,7 +15,7 @@ public class Patients {
     
         Scanner sc = new Scanner(System.in);
         @Autowired 
-        PeopleService service;
+        private PeopleService service;
 
         public void addpatients(){
             PatientEntity entity = new PatientEntity();
@@ -30,8 +30,7 @@ public class Patients {
             String address = sc.nextLine();
             entity.setPaddress(address);
             System.out.print("Enter Patient's Phone Number: ");
-            int phone = sc.nextInt();
-            sc.nextLine();
+            String phone = sc.nextLine();
             entity.setPphone(phone);
             service.addPatient(entity);
             System.out.println("\nPatient: "+name+" is added successfully !!");
@@ -41,10 +40,10 @@ public class Patients {
             List<PatientEntity> list = service.showPatients();
             System.out.println("\n\n||-------------------||");
             System.out.println("|| Show All Patients ||");
-            System.out.println("||-------------------||/n");
+            System.out.println("||-------------------||");
             for(int i=0; i<list.size();i++){
                 PatientEntity entity = list.get(i);
-                System.out.println("Patient's Id: "+entity.getPid());
+                System.out.println("\nPatient's Id: "+entity.getPid());
                 System.out.println("Patient's Name: "+entity.getPname());
                 System.out.println("Patient's Address: "+entity.getPaddress());
                 System.out.println("Patient's Phone Number: "+entity.getPphone());

@@ -16,7 +16,7 @@ public class PatientEntity {
     private Long pid;
     private String pname;
     private String paddress;
-    private int pphone;
+    private String pphone;
     
     
 }
