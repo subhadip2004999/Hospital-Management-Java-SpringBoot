@@ -26,6 +26,7 @@ public class ImageAdmin {
         System.out.print("Enter Image Cost: ");
         double cost = sc.nextDouble();
         entity.setImagecost(cost);
+        sc.nextLine();
         System.out.print("Enter Image Technology Details: ");
         String details = sc.nextLine();
         entity.setImagedetails(details);

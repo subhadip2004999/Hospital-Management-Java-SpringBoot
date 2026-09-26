@@ -26,9 +26,9 @@ public class PharmAdmin {
         System.out.print("Enter Medicine Cost: ");
         double cost = sc.nextDouble();
         entity.setMedicinecost(cost);
-        System.out.print("Enter Medicine Details: ");
-        String details = sc.next();
         sc.nextLine();
+        System.out.print("Enter Medicine Details: ");
+        String details = sc.nextLine();
         entity.setMedicinedetails(details);
         service.createMedicine(entity);
         System.out.println("\nNew Medicine Added Successfully !!");

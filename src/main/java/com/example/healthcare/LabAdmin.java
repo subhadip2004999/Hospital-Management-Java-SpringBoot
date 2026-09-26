@@ -26,6 +26,7 @@ public class LabAdmin {
         System.out.print("Enter Test Cost: ");
         double cost = sc.nextDouble();
         entity.setTestcost(cost);
+        sc.nextLine();
         System.out.print("Enter Test Details: ");
         String details = sc.nextLine();
         entity.setTestdetails(details);
