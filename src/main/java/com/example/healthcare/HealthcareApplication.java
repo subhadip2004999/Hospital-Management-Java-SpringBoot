@@ -20,6 +20,8 @@ public class HealthcareApplication implements CommandLineRunner {
     private ImageAdmin img;
     @Autowired
     private LabAdmin lab;
+    @Autowired 
+    private PharmAdmin pharm;
 
     public static void main(String[] args) {
         SpringApplication.run(HealthcareApplication.class, args);
@@ -242,7 +244,39 @@ public class HealthcareApplication implements CommandLineRunner {
                 case 6:
                     int pharmLoop = 0;
                     do{
-                        
+                        System.out.println("\n\n||----------||");
+                        System.out.println("|| Pharmacy ||");
+                        System.out.println("||----------||\n");
+                        System.out.println("1. Add New Medicine");
+                        System.out.println("2. Show All Medicine");
+                        System.out.println("3. Find Medicine Details By Id");
+                        System.out.println("4. Exit");
+                        System.out.print("\nEnter your choice: ");
+                        int choice6 = sc.nextInt();
+                        sc.nextLine();
+                        switch(choice6){
+                            case 1:
+                                pharm.addmedicine();
+                                sc.nextLine();
+                                break;
+                            case 2:
+                                pharm.allmedicine();
+                                sc.nextLine();
+                                break;
+                            case 3:
+                                pharm.medicinebyid();
+                                sc.nextLine();
+                                break;
+                            case 4:
+                                System.out.println("\nExit Imaging\n");
+                                sc.nextLine();
+                                imageLoop = 1;
+                                break;
+                            default:
+                                System.out.println("\nWrong Choice\n");
+                                sc.nextLine();
+                                break;
+                            }
                     }while(pharmLoop==0);
 
 

@@ -15,7 +15,7 @@ public class PharmAdmin {
     private PharmService service;
     Scanner sc = new Scanner(System.in);
 
-    public void addlab(){
+    public void addmedicine(){
         PharmEntity entity = new PharmEntity();
         System.out.println("\n\n||------------------||");
         System.out.println("|| Add New Medicine ||");
@@ -27,13 +27,14 @@ public class PharmAdmin {
         double cost = sc.nextDouble();
         entity.setMedicinecost(cost);
         System.out.print("Enter Medicine Details: ");
-        String details = sc.nextLine();
+        String details = sc.next();
+        sc.nextLine();
         entity.setMedicinedetails(details);
         service.createMedicine(entity);
         System.out.println("\nNew Medicine Added Successfully !!");
     }
 
-    public void alllab(){
+    public void allmedicine(){
         System.out.println("\n\n||--------------------||");
         System.out.println("|| View All Medicines ||");
         System.out.println("||--------------------||");
@@ -48,7 +49,7 @@ public class PharmAdmin {
         }
     }
 
-    public void labbyid(){
+    public void medicinebyid(){
         System.out.print("\nEnter Medicine Id: ");
         Long id = sc.nextLong();
         sc.nextLine();
