@@ -34,7 +34,7 @@ public class Patients {
             sc.nextLine();
             entity.setPphone(phone);
             service.addPatient(entity);
-            System.out.println("\nPatient: "+" is added successfully !!");
+            System.out.println("\nPatient: "+name+" is added successfully !!");
         }
 
         public void allpatients(){

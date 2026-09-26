@@ -13,6 +13,7 @@ public class HealthcareApplication implements CommandLineRunner {
     @Autowired
     private Appointments app;
     private Patients pat;
+    private Doctors doc;
 
     public static void main(String[] args) {
         SpringApplication.run(HealthcareApplication.class, args);
@@ -119,7 +120,40 @@ public class HealthcareApplication implements CommandLineRunner {
 
                     }while(patientLoop==0);
                     break;
+                
+                case 3:
+                    int doctorLoop = 0;
+                    do{
+                        System.out.println("\n\n||---------||");
+                        System.out.println("|| Doctors ||");
+                        System.out.println("||---------||\n");
+                        System.out.println("1. Add A New Doctor");
+                        System.out.println("2. Show All Doctors");
+                        System.out.println("3. Exit");
+                        System.out.print("\nEnter your choice: ");
+                        int choice3 = sc.nextInt();
+                        sc.nextLine();
 
+                        switch(choice3){
+                            case 1:
+                                doc.adddoctors();
+                                sc.nextLine();
+                                break;
+                            case 2:
+                                doc.viewdoctors();
+                                sc.nextLine();
+                                break;
+                            case 3:
+                                System.out.println("\n\nExit Doctors\n");
+                                sc.nextLine();
+                                doctorLoop =1;
+                                break;
+                            default:
+                                System.out.println("\nWrong Choice\n");
+                                sc.nextLine();
+                                break;
+                        }
+                    }while(doctorLoop==0);
 
                 case 8:
                     Loop = 890;
