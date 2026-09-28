@@ -23,6 +23,8 @@ public class PeopleService {
         dRepositoty.save(entity);
     }
 
+
+
     public List<PatientEntity> showPatients(){
         return pRepository.findAll();
     }
@@ -33,6 +35,11 @@ public class PeopleService {
 
     public Optional<PatientEntity> findPatientById(Long id){
         return pRepository.findById(id);
+
+    }
+
+    public Optional<DoctorEntity> findDoctorById(Long id){
+        return dRepositoty.findById(id);
 
     }
 

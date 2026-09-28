@@ -14,7 +14,6 @@ public class DischargeService {
     DischargeEntity dentity;
 
     public void createDischargeForm(DischargeEntity entity){
-        dentity.setTotal(dentity.getTotalBill());
         repository.save(entity);
     }
 

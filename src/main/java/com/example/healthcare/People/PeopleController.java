@@ -31,6 +31,11 @@ public class PeopleController {
         return service.showPatients();
     }
 
+    @GetMapping("/doctorbyid")
+    public Optional<DoctorEntity> getDoctorById(@RequestParam Long id) {
+        return service.findDoctorById(id);
+    }
+
     @GetMapping("/alldoctors")
     public List<DoctorEntity> getDoctorsTable() {
         return service.showDoctors();

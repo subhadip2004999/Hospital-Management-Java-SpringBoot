@@ -5,6 +5,7 @@ import java.util.Scanner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -22,6 +23,7 @@ public class HealthcareApplication implements CommandLineRunner {
     private LabAdmin lab;
     @Autowired 
     private PharmAdmin pharm;
+    private DischargeAdmin dischargeAdmin;
 
     public static void main(String[] args) {
         SpringApplication.run(HealthcareApplication.class, args);
@@ -162,6 +164,7 @@ public class HealthcareApplication implements CommandLineRunner {
                                 break;
                         }
                     }while(doctorLoop==0);
+                    break;
 
                 case 4:
                     int imageLoop = 0;
@@ -201,6 +204,7 @@ public class HealthcareApplication implements CommandLineRunner {
                         }
 
                     }while(imageLoop==0);
+                    break;
 
                 case 5:
                 int labLoop = 0;
@@ -239,6 +243,7 @@ public class HealthcareApplication implements CommandLineRunner {
                                 break;
                             }
                     }while(labLoop==0);
+                    break;
 
 
                 case 6:
@@ -278,11 +283,47 @@ public class HealthcareApplication implements CommandLineRunner {
                                 break;
                             }
                     }while(pharmLoop==0);
-
-
-                case 8:
-                    Loop = 1;
                     break;
+
+                
+           case 7:
+        int dischargeLoop = 0;
+        do {
+            System.out.println("\n\n||-----------||");
+            System.out.println("|| Discharge ||");
+            System.out.println("||-----------||\n");
+            System.out.println("1. Discharge Patient");
+            System.out.println("2. Show Discharge Details");
+            System.out.println("3. Exit");
+            System.out.print("\nEnter your choice: ");
+            int choice7 = sc.nextInt();
+            sc.nextLine(); // Consumes the newline character left-over from nextInt()
+            
+            switch (choice7) {
+                case 1:
+                    // Calls the method to add/create a discharge form and calculate the bill
+                    dischargeAdmin.adddischarge();
+                    break;
+                    
+                case 2:
+                    // Calls the method to look up and print the detailed discharge bill slip by ID
+                    dischargeAdmin.dischargebyid();
+                    break;
+                    
+                case 3:
+                    System.out.println("\nExit Discharge\n");
+                    dischargeLoop = 1;
+                    break;
+                    
+                default:
+                    System.out.println("\nWrong Choice\n");
+                    break;
+            }
+        } while (dischargeLoop == 0);
+        break;
+                case 8:
+                    System.out.println("\n\n|| Thankyou for using Healthcare. A Backend System for Hospitals ||");
+                    Loop = 1;
             }
 
         } while (Loop == 0);

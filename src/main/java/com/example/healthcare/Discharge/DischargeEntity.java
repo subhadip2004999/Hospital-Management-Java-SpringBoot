@@ -23,51 +23,21 @@ public class DischargeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long dischargeid;
 
-    @ManyToOne
-    @JoinColumn (name = "did")
-    private DoctorEntity doctorid;
+    
+    private Long doctorid;
 
-    @ManyToOne
-    @JoinColumn (name = "pid")
-    private PatientEntity patientid;
+    private Long patientid;
 
-    private double total;
+    private double totalbill;
 
-    @ManyToOne
-    @JoinColumn (name = "appid") AppointmentEntity appointmentid;
+    private Long appointmentid;
+    
+    private Long imageid;
+    
+    private Long testid;
 
-    @ManyToOne
-    @JoinColumn (name = "imageid")
-    private ImageEntity imageid;
+    private Long medicineid;
 
-    @ManyToOne
-    @JoinColumn (name = "testid")
-    private LabEntity testid;
-
-    @ManyToOne
-    @JoinColumn (name = "medicineid")
-    private PharmEntity medicineid;
-
-
-    public double getTotalBill() {
-        
-        double total = 0.0;
-
-        if (appointmentid != null && appointmentid.getDoctorid() != null) {
-        total += doctorid.getDfees();
-        }
-        if (imageid != null) {
-        total += imageid.getImagecost();
-        }
-        if (testid != null) {
-        total += testid.getTestcost();
-        }
-        if (medicineid != null) {
-        total += medicineid.getMedicinecost();
-        }
-        return total;
-        
-    }
 
     
 }
