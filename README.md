@@ -107,8 +107,7 @@ Select an option and follow the sub-menu prompts to:
 - Search/filter by ID
 - Manage discharge and billing
 
-## Try Asking
+## Contact
 
-- "How does the appointment booking flow from CLI input to database storage?"
-- "What's the structure of the Discharge module and how does it calculate patient billing?"
-- "Can I extend this system to add a REST API layer instead of just CLI?"
+- businesssubhadip@gmail.com
+- github@subhadip2004999
