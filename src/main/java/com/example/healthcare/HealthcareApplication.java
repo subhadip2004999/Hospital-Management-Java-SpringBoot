@@ -27,6 +27,7 @@ public class HealthcareApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(HealthcareApplication.class, args);
+
     }
 
     @Override
